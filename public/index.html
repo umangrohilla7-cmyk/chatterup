@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatterUp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Onboarding Modal -->
+  <div id="onboarding-modal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to ChatterUp!</h2>
+      <p>Please enter your name and choose a profile picture to join.</p>
+      <input type="text" id="username-input" placeholder="Enter your name..." autocomplete="off">
+      <div class="avatar-selection">
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=1" class="avatar-option selected" alt="avatar">
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=2" class="avatar-option" alt="avatar">
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=3" class="avatar-option" alt="avatar">
+      </div>
+      <button id="join-btn">Join Chat</button>
+    </div>
+  </div>
+
+  <!-- Main Chat Container -->
+  <div id="chat-container" class="hidden">
+    <header class="chat-header">
+      <h1>ChatterUp</h1>
+      <div id="user-welcome"></div>
+    </header>
+
+    <div class="chat-body">
+      <div class="messages-section">
+        <div id="messages"></div>
+        <div id="typing-indicator" class="typing"></div>
+        <div class="chat-input-area">
+          <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+          <button id="send-btn">Send</button>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <h3>Online Users (<span id="user-count">0</span>)</h3>
+        <ul id="users-list"></ul>
+        <div id="notifications-panel"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
